@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package main;
+package ordenador;
 
 /**
  *
@@ -236,8 +236,6 @@ public class Musica {
     public String toString() {
         return trackName + "," + artistsName + "," + artistCount + "," + releasedYear + "," + releasedMonth + "," + releasedDay + "," + inSpotifyPlaylist + "," + inSpotifyCharts + "," + streams + "," + inApplePlaylists + "," + inAppleCharts + "," + inDeezerPlaylists + "," + inDeezerCharts + "," + inShazamCharts + "," + bpm + "," + key + "," + mode + "," + danceability + "," + valence + "," + energy + "," + acousticness + "," + instrumentalness + "," + liveness + "," + speechiness;
     }
-
-    
 
         
     

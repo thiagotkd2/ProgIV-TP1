@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package main;
+package ordenador;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -16,34 +16,16 @@ import java.util.NoSuchElementException;
 public class ListaEncadeada<T> implements Iterable<T>{
     
     private Nodo<T> cabeca;
-    private Nodo<T> ultimo;
 
     public ListaEncadeada(){
         cabeca = null;
-        ultimo = null;
     }
 
     public boolean contem(T dado){
         return buscar(dado) != null;
     }
     
-    
-    protected Nodo<T> buscarAnterior(T dado){
-        Nodo<T> aux = cabeca;               // c1
-        while(aux.prox != null){                 // c2.n
-            if(aux.prox.dado.equals(dado)){  // c3. (n-1)
-                return aux;                 // c4 . 0
-            }
-            aux = aux.prox;                 // c5
-        }
-        
-        
-        return null;                        // c6
-    }                                       // c1+c2*n+(c3*(n-1)) + c5 = 2 + n
-                                            // Tempo Linear
-    
-    
-    protected Nodo<T> buscar(T dado){
+    private Nodo<T> buscar(T dado){
         Nodo<T> aux = cabeca;               // c1
         while(aux != null){                 // c2.n
             if(aux.dado.equals(dado)){  // c3. (n-1)
@@ -59,20 +41,6 @@ public class ListaEncadeada<T> implements Iterable<T>{
     public Nodo<T> getCabeca() {
         return cabeca;
     }
-
-    protected void setCabeca(Nodo<T> cabeca) {
-        this.cabeca = cabeca;
-    }
-
-    public Nodo<T> getUltimo() {
-        return ultimo;
-    }
-
-    public void setUltimo(Nodo<T> ultimo) {
-        this.ultimo = ultimo;
-    }
-    
-    
     
     public void inserir(T dado){
         Nodo<T> nodo = new Nodo<>(dado);
@@ -84,14 +52,10 @@ public class ListaEncadeada<T> implements Iterable<T>{
             Nodo cabecaAtual = cabeca;   // c2
             cabeca = nodo;              // c3
             nodo.prox = cabecaAtual;    // c4 -> c1+c2+c3+c4 = A
-            nodo.ant = null;
-            ultimo = nodo;
         }else{                          //c5
-            Nodo ultimoAtual = ultimo; // X = an + b
+            Nodo ultimoAtual = acharUltimo(); // X = an + b
             ultimoAtual.prox = nodo; // c6
-            nodo.ant = ultimoAtual;
-            nodo.prox = null;
-            ultimo = nodo;           // c7 -> c4+c5+c6+c7 = B
+            nodo.prox = null;        // c7 -> c4+c5+c6+c7 = B
         }                            // no total: A*0+B+X,
     }                                // Tempo linear
     
@@ -114,45 +78,29 @@ public class ListaEncadeada<T> implements Iterable<T>{
         
         if (nodo == cabeca){            // c1 * 0
             cabeca = cabeca.prox;       // c2 * 0
-            cabeca.ant = null;
             return;                     // c3 * 0
         }
         
-        Nodo ant = nodo.ant;
-        
-        if(nodo == ultimo){
-            ant.prox = null; 
-            nodo.prox = null;                
-
-            nodo.ant = null;
-            ultimo = ant;
-            return;
-            
+        // procura o no anterior
+        Nodo ant = cabeca;              // c4
+        while(ant.prox != null && ant.prox != nodo){ // c5 * n
+            ant = ant.prox;                          // c6 * (n-1)
         }
-        
-        
-        
 
+        if (ant.prox != nodo) throw new IllegalStateException("nodo nao existe"); // 0
 
-        if (nodo==null) throw new IllegalStateException("nodo nao existe"); // 0
-
-        ant.prox = nodo.prox; 
-        nodo.prox = null;                
-        
-        nodo.ant = null;
-        ant.prox.ant = ant;
-                                                
+        ant.prox = nodo.prox; // c7
+        nodo.prox = null;   // c8               c5*n + c6 *(n-1) + c7 + c8 = 2n +1
+                                                // Tempo Linear
     }
 
     class Nodo<T> {
         T dado;
         Nodo<T> prox;
-        Nodo<T> ant;
 
         public Nodo (T dado){
             this.dado = dado;
             this.prox = null;
-            this.ant = null;
         }
         
         public T getDado() {

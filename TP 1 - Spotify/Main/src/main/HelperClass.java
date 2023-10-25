@@ -5,8 +5,12 @@
 package main;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  *
@@ -27,17 +31,17 @@ public class HelperClass {
         
         // regex que filtra vírgula, excluindo aquelas entre aspas 
         String regex = "(,(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$))";  // gerado por perplexity.ai
-        BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/../spotify-2023.csv"));
+        BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/test/spotify-2023-reduced.csv"));
         line = br.readLine();
         while ((line = br.readLine()) != null)   //returns a Boolean value  
         {  
             String[] dadosMusica = (line.split(regex));    // usando regex
             for (int i = 0; i<dadosMusica.length; i++){
                 if (dadosMusica[i].isEmpty()){
-                    dadosMusica[i] = "-";
-                }else{
-                    dadosMusica[i]=dadosMusica[i].replace("\"","");
-                }
+                    dadosMusica[i] = "-";}
+//                }else{
+//                    dadosMusica[i]=dadosMusica[i].replace("\"",""); // retira aspas internas
+//                }
             }
             
             /*
@@ -58,7 +62,7 @@ public class HelperClass {
             m.setReleasedYear((dadosMusica[3]));
             m.setReleasedMonth((dadosMusica[4]));
             m.setReleasedDay((dadosMusica[5]));
-            m.setInSpotifyPlaylist((dadosMusica[6].replace(",", ""))); // retirar , de números da ordem de milhares
+            m.setInSpotifyPlaylist((dadosMusica[6].replace(",", ""))); // retirar ,' de números da ordem de milhares
             m.setInSpotifyCharts((dadosMusica[7].replace(",", ""))); 
             m.setStreams((dadosMusica[8].replace(",", "")));        
             m.setInApplePlaylists((dadosMusica[9].replace(",", "")));
@@ -87,7 +91,41 @@ public class HelperClass {
         return listaMusica;
     }
     
+    /*
+    SelectionSort: 1
+    InsertionSort: 2
     
+    
+    */
+    
+    
+    
+    public static void escreveEstatisticaOrdenacao(double tempo, int operacoes, int metodo, String nomeMetodo){
+        
+    try{
+        File f = new File("test/estatisticas.txt");
+        PrintWriter writer =null;
+        
+        if(f.exists() && !f.isDirectory()){
+            writer = new PrintWriter(new FileOutputStream(new File("test/estatisticas.txt"), true));
+        }else{
+            writer = new PrintWriter("test/estatisticas.txt");
+        }
+        
+        
+        writer.println("-----------------------------------------------------");
+        writer.println(nomeMetodo);
+        writer.println("Tempo de execução: " + tempo + " ms");
+        writer.println("Operações: " + operacoes);
+        if(metodo==1 || metodo==2 || metodo==3){writer.println("O(n^2)");}
+        
+        writer.close();
+    }catch(FileNotFoundException e){
+        System.out.println("Erro ao criar arquivo.");
+    }
+        
+        
+    }
     
     
 }

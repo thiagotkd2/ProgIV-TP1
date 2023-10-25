@@ -1,0 +1,120 @@
+-----------------------------------------------------
+insertionSort
+Tempo de execução: 1048.2377 ms
+Operações: 227724
+O(n^2)
+-----------------------------------------------------
+insertionSort
+Tempo de execução: 776.207 ms
+Operações: 225101
+O(n^2)
+-----------------------------------------------------
+SelectionSort
+Tempo de execução: 205.3048 ms
+Operações: 453843
+O(n^2)
+-----------------------------------------------------
+SelectionSort
+Tempo de execução: 187.3618 ms
+Operações: 453855
+O(n^2)
+-----------------------------------------------------
+insertionSort
+Tempo de execução: 817.2509 ms
+Operações: 225101
+O(n^2)
+-----------------------------------------------------
+SelectionSort
+Tempo de execução: 256.4343 ms
+Operações: 453843
+O(n^2)
+-----------------------------------------------------
+SelectionSort
+Tempo de execução: 215.7455 ms
+Operações: 453843
+O(n^2)
+-----------------------------------------------------
+SelectionSort
+Tempo de execução: 223.5632 ms
+Operações: 453843
+O(n^2)
+-----------------------------------------------------
+SelectionSort
+Tempo de execução: 218.581 ms
+Operações: 453843
+O(n^2)
+-----------------------------------------------------
+SelectionSort
+Tempo de execução: 1.134 ms
+Operações: 54
+O(n^2)
+-----------------------------------------------------
+SelectionSort
+Tempo de execução: 0.6461 ms
+Operações: 51
+O(n^2)
+-----------------------------------------------------
+insertionSort
+Tempo de execução: 0.5691 ms
+Operações: 24
+O(n^2)
+-----------------------------------------------------
+SelectionSort
+Tempo de execução: 0.6109 ms
+Operações: 54
+O(n^2)
+-----------------------------------------------------
+SelectionSort
+Tempo de execução: 0.9426 ms
+Operações: 54
+O(n^2)
+-----------------------------------------------------
+SelectionSort
+Tempo de execução: 0.8614 ms
+Operações: 54
+O(n^2)
+-----------------------------------------------------
+SelectionSort
+Tempo de execução: 0.5447 ms
+Operações: 54
+O(n^2)
+-----------------------------------------------------
+bubbleSort
+Tempo de execução: 0.594 ms
+Operações: 45
+O(n^2)
+-----------------------------------------------------
+SelectionSort
+Tempo de execução: 0.9766 ms
+Operações: 54
+O(n^2)
+-----------------------------------------------------
+bubbleSort
+Tempo de execução: 269.0794 ms
+Operações: 446424
+O(n^2)
+-----------------------------------------------------
+bubbleSort
+Tempo de execução: 0.5548 ms
+Operações: 45
+O(n^2)
+-----------------------------------------------------
+bubbleSort
+Tempo de execução: 0.6348 ms
+Operações: 45
+O(n^2)
+-----------------------------------------------------
+insertionSort
+Tempo de execução: 0.5667 ms
+Operações: 24
+O(n^2)
+-----------------------------------------------------
+insertionSort
+Tempo de execução: 0.5787 ms
+Operações: 24
+O(n^2)
+-----------------------------------------------------
+SelectionSort
+Tempo de execução: 0.501601 ms
+Operações: 51
+O(n^2)
