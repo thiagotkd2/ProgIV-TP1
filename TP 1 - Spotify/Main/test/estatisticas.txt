@@ -1,120 +1,74 @@
 -----------------------------------------------------
-insertionSort
-Tempo de execução: 1048.2377 ms
-Operações: 227724
-O(n^2)
------------------------------------------------------
-insertionSort
-Tempo de execução: 776.207 ms
-Operações: 225101
-O(n^2)
------------------------------------------------------
 SelectionSort
-Tempo de execução: 205.3048 ms
+Tempo de execução: 224.8168 ms
 Operações: 453843
 O(n^2)
 -----------------------------------------------------
 SelectionSort
-Tempo de execução: 187.3618 ms
+Tempo de execução: 229.0914 ms
 Operações: 453855
 O(n^2)
 -----------------------------------------------------
 insertionSort
-Tempo de execução: 817.2509 ms
+Tempo de execução: 967.8609 ms
 Operações: 225101
 O(n^2)
 -----------------------------------------------------
-SelectionSort
-Tempo de execução: 256.4343 ms
-Operações: 453843
-O(n^2)
------------------------------------------------------
-SelectionSort
-Tempo de execução: 215.7455 ms
-Operações: 453843
-O(n^2)
------------------------------------------------------
-SelectionSort
-Tempo de execução: 223.5632 ms
-Operações: 453843
-O(n^2)
------------------------------------------------------
-SelectionSort
-Tempo de execução: 218.581 ms
-Operações: 453843
-O(n^2)
------------------------------------------------------
-SelectionSort
-Tempo de execução: 1.134 ms
-Operações: 54
-O(n^2)
------------------------------------------------------
-SelectionSort
-Tempo de execução: 0.6461 ms
-Operações: 51
-O(n^2)
------------------------------------------------------
 insertionSort
-Tempo de execução: 0.5691 ms
-Operações: 24
-O(n^2)
------------------------------------------------------
-SelectionSort
-Tempo de execução: 0.6109 ms
-Operações: 54
-O(n^2)
------------------------------------------------------
-SelectionSort
-Tempo de execução: 0.9426 ms
-Operações: 54
-O(n^2)
------------------------------------------------------
-SelectionSort
-Tempo de execução: 0.8614 ms
-Operações: 54
-O(n^2)
------------------------------------------------------
-SelectionSort
-Tempo de execução: 0.5447 ms
-Operações: 54
+Tempo de execução: 1030.4665 ms
+Operações: 227724
 O(n^2)
 -----------------------------------------------------
 bubbleSort
-Tempo de execução: 0.594 ms
-Operações: 45
-O(n^2)
------------------------------------------------------
-SelectionSort
-Tempo de execução: 0.9766 ms
-Operações: 54
-O(n^2)
------------------------------------------------------
-bubbleSort
-Tempo de execução: 269.0794 ms
+Tempo de execução: 304.1488 ms
 Operações: 446424
 O(n^2)
 -----------------------------------------------------
 bubbleSort
-Tempo de execução: 0.5548 ms
-Operações: 45
+Tempo de execução: 282.9031 ms
+Operações: 449929
 O(n^2)
 -----------------------------------------------------
-bubbleSort
-Tempo de execução: 0.6348 ms
-Operações: 45
+quicksort
+Tempo de execução: 53.5161 ms
+Operações: 7984
 O(n^2)
 -----------------------------------------------------
-insertionSort
-Tempo de execução: 0.5667 ms
-Operações: 24
+quicksort
+Tempo de execução: 47.8374 ms
+Operações: 6722
 O(n^2)
 -----------------------------------------------------
-insertionSort
-Tempo de execução: 0.5787 ms
-Operações: 24
-O(n^2)
+shellsort
+Tempo de execução: 64.4678 ms
+Operações: 8153
+Conjectura ao número de comparação para a sequência de  Knuth
+1-C(n) = O(n^1,25)
+2-C(n) = O(n(ln n)^2)
 -----------------------------------------------------
-SelectionSort
-Tempo de execução: 0.501601 ms
-Operações: 51
-O(n^2)
+shellsort
+Tempo de execução: 66.5026 ms
+Operações: 7780
+Conjectura ao número de comparação para a sequência de  Knuth
+1-C(n) = O(n^1,25)
+2-C(n) = O(n(ln n)^2)
+-----------------------------------------------------
+mergesort
+Tempo de execução: 49.4162 ms
+Operações: 20823
+O(n log n)
+-----------------------------------------------------
+mergesort
+Tempo de execução: 49.1865 ms
+Operações: 20823
+O(n log n)
+-----------------------------------------------------
+heapsort
+Tempo de execução: 74.6918 ms
+Operações: 12034
+O(n log n)
+-----------------------------------------------------
+heapsort
+Tempo de execução: 74.775 ms
+Operações: 11910
+O(n log n)

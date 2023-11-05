@@ -91,7 +91,7 @@ public class ListaEncadeada<T> implements Iterable<T>{
             ultimoAtual.prox = nodo; // c6
             nodo.ant = ultimoAtual;
             nodo.prox = null;
-            ultimo = nodo;           // c7 -> c4+c5+c6+c7 = B
+            this.setUltimo(nodo);           // c7 -> c4+c5+c6+c7 = B
         }                            // no total: A*0+B+X,
     }                                // Tempo linear
     

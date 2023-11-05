@@ -18,9 +18,12 @@ import java.io.PrintWriter;
  */
 public class HelperClass {
     
-    public static ListaEncadeada<Musica> preencheLista() throws IOException{
+    public static void preencheLista(Musicas ms) throws IOException{
         
-        ListaEncadeada<Musica> listaMusica = new ListaEncadeada();
+        
+        
+        
+        
         
         /*
         Leitura de CSV de javatpoint:
@@ -31,7 +34,7 @@ public class HelperClass {
         
         // regex que filtra vírgula, excluindo aquelas entre aspas 
         String regex = "(,(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$))";  // gerado por perplexity.ai
-        BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/test/spotify-2023-reduced.csv"));
+        BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/test/spotify-2023.csv"));
         line = br.readLine();
         while ((line = br.readLine()) != null)   //returns a Boolean value  
         {  
@@ -81,14 +84,15 @@ public class HelperClass {
             m.setLiveness((dadosMusica[22]));
             m.setSpeechiness((dadosMusica[23]));
             
-            listaMusica.inserir(m);
+            ms.inserir(m);
+            ms.incrementaContadorTamanhoLista();
             
             
         }
         
         
         
-        return listaMusica;
+        
     }
     
     /*
@@ -117,7 +121,9 @@ public class HelperClass {
         writer.println(nomeMetodo);
         writer.println("Tempo de execução: " + tempo + " ms");
         writer.println("Operações: " + operacoes);
-        if(metodo==1 || metodo==2 || metodo==3){writer.println("O(n^2)");}
+        if(metodo==1 || metodo==2 || metodo==3 || metodo ==4){writer.println("O(n^2)");}
+        if(metodo==5){writer.println("Conjectura ao número de comparação para a sequência de  Knuth\n1-C(n) = O(n^1,25)\n2-C(n) = O(n(ln n)^2)");}
+        if(metodo==6 || metodo==7){writer.println("O(n log n)");}
         
         writer.close();
     }catch(FileNotFoundException e){
